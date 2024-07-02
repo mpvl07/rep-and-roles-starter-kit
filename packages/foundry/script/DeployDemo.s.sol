@@ -15,13 +15,13 @@ import {ReputationFaucet} from "../contracts/Reputation/ReputationFaucet.sol";
 contract DeployDemoScript is ScaffoldETHDeploy {
     error InvalidPrivateKey(string);
 
-    address controller = 0x2F15D4A66D22ecC6967928b6A76Ab06897b05676; //replace with burner or other address from wallet!
+    address controller = 0x7f2377647CfF7F30eC8fd3AF8353C8A0AB1a91C0; //replace with burner or other address from wallet!
 
     function run() external {
         uint256 deployerPrivateKey = setupLocalhostEnv();
         if (deployerPrivateKey == 0) {
             revert InvalidPrivateKey(
-                "You don't have a deployer account. Make sure you have set DEPLOYER_PRIVATE_KEY in .env or use `yarn generate` to generate a new random account"
+                "You don't have a deployer account. Make sure you have set DEPLOYER_PRIVATE_KEY in .env or use yarn generate to generate a new random account"
             );
         }
         address deployerPubKey = vm.createWallet(deployerPrivateKey).addr;
